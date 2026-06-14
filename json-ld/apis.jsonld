@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "aid": "https://apis.io/vocab/aid",
+    "baseURL": "https://apis.io/vocab/baseURL",
+    "humanURL": "https://apis.io/vocab/humanURL"
+  },
+  "@type": "WebAPI",
+  "@id": "https://raw.githubusercontent.com/api-evangelist/bitmart/refs/heads/main/apis.yml",
+  "name": "BitMart",
+  "description": "BitMart is a global cryptocurrency exchange providing REST and WebSocket APIs for spot trading, perpetual futures contracts, margin trading, real-time market data, and account and withdrawal management across 6 specialized API surfaces.",
+  "url": "https://developer-pro.bitmart.com/",
+  "image": "https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "keywords": [
+    "Cryptocurrency",
+    "Exchange",
+    "Trading",
+    "Blockchain",
+    "Finance",
+    "Market Data",
+    "Futures"
+  ],
+  "termsOfService": "https://www.bitmart.com/about/en-US/terms-of-use",
+  "privacyPolicy": "https://www.bitmart.com/about/en-US/privacy-policy",
+  "documentation": "https://developer-pro.bitmart.com/en/spot/",
+  "hasPart": [
+    {
+      "@type": "WebAPI",
+      "aid": "bitmart:spot-trading-api",
+      "name": "BitMart Spot Trading API",
+      "description": "The BitMart Spot Trading REST API provides programmatic access to spot trading on the BitMart global cryptocurrency exchange. Developers can place and manage limit, market, and algorithmic orders, query real-time and historical market data including tickers, order books, klines and trades, manage account balances, and access trading fee information.",
+      "baseURL": "https://api-cloud.bitmart.com",
+      "humanURL": "https://developer-pro.bitmart.com/en/spot/",
+      "keywords": ["Cryptocurrency", "Exchange", "Market Data", "Spot", "Trading"]
+    },
+    {
+      "@type": "WebAPI",
+      "aid": "bitmart:spot-websocket-api",
+      "name": "BitMart Spot WebSocket API",
+      "description": "The BitMart Spot WebSocket API delivers real-time streaming market data and private account updates via persistent WebSocket connections. Public channels include ticker prices, order book depth, trade history, and kline candlestick data.",
+      "baseURL": "wss://ws-manager-compress.bitmart.com",
+      "humanURL": "https://developer-pro.bitmart.com/en/spot/",
+      "keywords": ["Cryptocurrency", "Market Data", "Real-Time", "Streaming", "WebSocket"]
+    },
+    {
+      "@type": "WebAPI",
+      "aid": "bitmart:futures-trading-api",
+      "name": "BitMart Futures Trading API",
+      "description": "The BitMart Futures Trading REST API enables trading of perpetual futures contracts on the BitMart derivatives platform. Developers can submit and cancel orders including plan orders, take-profit and stop-loss orders, and trailing stop orders.",
+      "baseURL": "https://api-cloud-v2.bitmart.com",
+      "humanURL": "https://developer-pro.bitmart.com/en/futuresv2/",
+      "keywords": ["Cryptocurrency", "Derivatives", "Futures", "Perpetual", "Trading"]
+    },
+    {
+      "@type": "WebAPI",
+      "aid": "bitmart:futures-websocket-api",
+      "name": "BitMart Futures WebSocket API",
+      "description": "The BitMart Futures WebSocket API streams real-time derivatives market data and account updates through persistent WebSocket connections. Public channels include depth snapshots and incremental updates, trades, klines, mark price, and funding rate data.",
+      "baseURL": "wss://openapi-ws-v2.bitmart.com",
+      "humanURL": "https://developer-pro.bitmart.com/en/futuresv2/",
+      "keywords": ["Cryptocurrency", "Derivatives", "Futures", "Real-Time", "Streaming", "WebSocket"]
+    },
+    {
+      "@type": "WebAPI",
+      "aid": "bitmart:margin-trading-api",
+      "name": "BitMart Margin Trading API",
+      "description": "The BitMart Margin Trading API provides access to isolated margin trading functionality. Developers can submit leveraged buy and sell orders, manage isolated margin accounts, transfer assets between spot and margin wallets, borrow and repay loan assets.",
+      "baseURL": "https://api-cloud.bitmart.com",
+      "humanURL": "https://developer-pro.bitmart.com/en/spot/",
+      "keywords": ["Borrowing", "Cryptocurrency", "Leverage", "Margin", "Trading"]
+    },
+    {
+      "@type": "WebAPI",
+      "aid": "bitmart:account-wallet-api",
+      "name": "BitMart Account and Wallet API",
+      "description": "The BitMart Account and Wallet API provides programmatic access to funding account management, including wallet balance queries, deposit address retrieval, withdrawal application submission, and deposit/withdrawal history.",
+      "baseURL": "https://api-cloud.bitmart.com",
+      "humanURL": "https://developer-pro.bitmart.com/en/spot/",
+      "keywords": ["Account", "Cryptocurrency", "Deposits", "Wallet", "Withdrawals"]
+    }
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "BitMart",
+    "url": "https://www.bitmart.com",
+    "sameAs": "https://github.com/bitmartexchange"
+  }
+}
