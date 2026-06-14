@@ -1,0 +1,159 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: BitMart
+providerId: bitmart
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Cryptocurrency
+  - Exchange
+  - Trading
+  - Market Data
+  - Rate Limiting
+description: BitMart applies per-endpoint rate limits using time-window buckets (typically 2-second
+  windows) with separate scopes for IP-based public endpoints, API-key-based authenticated endpoints,
+  and UID-based signed trading endpoints. Spot and futures endpoints each carry individually documented
+  limits. Exceeding a rate limit returns HTTP 429. Rate limit usage is reported in response headers.
+  WebSocket connections have separate per-IP connection count limits for public and private channels.
+  A general baseline of 600 requests per 60 seconds applies where no specific endpoint limit is stated.
+sources:
+  - https://developer-pro.bitmart.com/en/spot/
+  - https://developer-pro.bitmart.com/en/futuresv2/
+  - https://developer-pro.bitmart.com/en/faq/
+headers:
+  remaining: X-BM-RateLimit-Remaining
+  limit: X-BM-RateLimit-Limit
+  reset: X-BM-RateLimit-Reset
+responseCodes:
+  throttled: 429
+  authError: 30002
+  rateLimitExceeded: 30013
+limits:
+  - name: System endpoints (IP)
+    scope: IP
+    metric: requests_per_second
+    limit: 10
+    window: 1s
+    notes: System time and service status endpoints. No authentication required.
+  - name: Public market data - spot (IP)
+    scope: IP
+    metric: requests_per_window
+    limit: 8-15
+    window: 2s
+    notes: Per-endpoint limits vary from 8 to 15 requests per 2-second window for spot market data
+      endpoints including tickers, order books, klines, and trades.
+  - name: Spot order placement (UID)
+    scope: UID
+    metric: requests_per_window
+    limit: 40
+    window: 2s
+    notes: Submit order, batch order, and cancel order endpoints are limited to 40 requests per
+      2-second window per user account (UID). Cancel-all is restricted to 1 request per 3 seconds.
+  - name: Spot order query (KEY)
+    scope: KEY
+    metric: requests_per_window
+    limit: 50
+    window: 2s
+    notes: Order query endpoints allow up to 50 requests per 2-second window per API key. Open
+      orders and history endpoints are limited to 12 per 2-second window.
+  - name: Spot algo trading (UID/KEY)
+    scope: UID
+    metric: requests_per_window
+    limit: 10-40
+    window: 2s
+    notes: Algo order submission and cancellation are limited to 10 per 2-second window per UID.
+      Algo order queries allow up to 40 requests per 2-second window per KEY.
+  - name: Margin trading (UID/KEY)
+    scope: UID
+    metric: requests_per_window
+    limit: 2-150
+    window: 2s
+    notes: Margin order submission is limited to 20 per second per UID. Borrow/repay record queries
+      allow up to 150 requests per 2-second window. Account and transfer endpoints range from 2-12
+      per 2-second window.
+  - name: Funding account (KEY)
+    scope: KEY
+    metric: requests_per_window
+    limit: 2-12
+    window: 2s
+    notes: Wallet balance and deposit/withdrawal endpoints are limited to 2-12 requests per 2-second
+      window per API key. Withdrawal application requires SIGNED authentication.
+  - name: Futures market data (IP)
+    scope: IP
+    metric: requests_per_window
+    limit: 12
+    window: 2s
+    notes: Futures market data endpoints including contract details, depth, trades, and klines are
+      limited to 12 requests per 2-second window per IP address.
+  - name: Futures order placement (UID)
+    scope: UID
+    metric: requests_per_window
+    limit: 24
+    window: 2s
+    notes: Futures order submission is limited to 24 requests per 2-second window per UID. Order
+      cancellation allows up to 40 requests per 2-second window.
+  - name: Futures position query (KEY)
+    scope: KEY
+    metric: requests_per_window
+    limit: 6-50
+    window: 2s
+    notes: Position detail queries are limited to 6 requests per 2-second window. Open orders list
+      allows up to 50 requests per 2-second window per API key.
+  - name: General baseline (IP)
+    scope: IP
+    metric: requests_per_minute
+    limit: 600
+    window: 60s
+    notes: General baseline rate limit of 600 requests per 60 seconds per IP where no specific
+      endpoint-level limit is documented.
+  - name: WebSocket - spot public connections (IP)
+    scope: IP
+    metric: concurrent_connections
+    limit: 20
+    window: persistent
+    notes: Each IP may maintain up to 20 simultaneous connections to the spot public WebSocket
+      endpoint (wss://ws-manager-compress.bitmart.com/api).
+  - name: WebSocket - spot private connections (IP)
+    scope: IP
+    metric: concurrent_connections
+    limit: 10
+    window: persistent
+    notes: Each IP may maintain up to 10 simultaneous connections to the spot private WebSocket
+      endpoint (wss://ws-manager-compress.bitmart.com/user).
+  - name: WebSocket - futures private connections (IP)
+    scope: IP
+    metric: concurrent_connections
+    limit: 500
+    window: persistent
+    notes: Each IP may maintain up to 500 simultaneous connections to the futures private WebSocket
+      endpoint, supporting high-throughput institutional deployments.
+  - name: WebSocket - messages per connection (IP)
+    scope: IP
+    metric: messages_per_window
+    limit: 100
+    window: 10s
+    notes: Up to 100 messages can be sent within a 10-second window per connection. A maximum of
+      20 topics can be included per subscription message.
+policies:
+  - name: Endpoint-level limits
+    description: Each API endpoint declares its own rate limit scope (IP, KEY, or UID) and window.
+      Clients should consult per-endpoint documentation rather than relying solely on the general baseline.
+  - name: HTTP 429 on breach
+    description: When any rate limit is exceeded, the server returns HTTP 429. Clients should inspect
+      the X-BM-RateLimit-Reset header to determine when the current window resets before retrying.
+  - name: Response header tracking
+    description: Every response includes X-BM-RateLimit-Remaining (calls remaining in window),
+      X-BM-RateLimit-Limit (window maximum), and X-BM-RateLimit-Reset (window reset timestamp).
+      Clients should track these headers to implement proactive throttling.
+  - name: Scope separation
+    description: IP-based limits apply to public and keyed endpoints by source IP address. KEY-based
+      limits apply per API key for authenticated queries. UID-based limits apply per user account for
+      signed trading operations such as order placement and cancellation.
+  - name: WebSocket heartbeat
+    description: WebSocket connections use a Ping/Pong keepalive mechanism. Clients must respond to
+      server pings with pong messages to maintain active connections and avoid disconnection.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

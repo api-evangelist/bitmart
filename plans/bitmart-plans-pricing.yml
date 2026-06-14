@@ -1,0 +1,217 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: BitMart
+providerId: bitmart
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Cryptocurrency
+  - Exchange
+  - Trading
+  - Blockchain
+  - Finance
+  - Market Data
+description: BitMart does not charge for API access itself; commercial pricing is expressed as
+  spot and futures trading commissions through a VIP tier system based on BMX token holdings and
+  30-day cumulative trading volume. API connectivity, market data, and WebSocket streams are
+  provided at no cost; revenue is captured per-trade. New API users receive a 30-day API VIP3
+  trial with 0% spot trading fees. The BMX token provides a 25% fee discount when used for fee
+  payment, though this discount does not apply during API program enrollment.
+sources:
+  - https://bitmart.zendesk.com/hc/en-us/articles/4642859293979-BitMart-API-Users-VIP-Program
+  - https://developer-pro.bitmart.com/en/spot/
+  - https://www.bitdegree.org/crypto/tutorials/bitmart-fees
+plans:
+  - id: bitmart-api-access
+    name: API Access (No Fee)
+    type: freemium
+    description: Free programmatic access to BitMart's REST and WebSocket APIs for any authenticated
+      account. Trading fees, not API connectivity, are what is billed.
+    entries:
+      - label: API connectivity
+        name: api_access
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Market data (REST + WebSocket)
+        name: market_data
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Spot Trading API
+      - name: Futures Trading API
+      - name: Margin Trading API
+      - name: Account and Wallet API
+      - name: Spot WebSocket API
+      - name: Futures WebSocket API
+      - name: Simulated Trading Environment
+  - id: bitmart-api-vip-trial
+    name: API VIP3 Trial (30 Days)
+    type: freemium
+    description: New BitMart API users automatically receive API VIP3 status for the first 30 days,
+      granting 0% maker and taker fees on spot trading via API and higher rate limit ceilings.
+    entries:
+      - label: Spot maker fee (trial period)
+        name: spot_maker_vip3_trial
+        type: flat
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00%'
+        userMultiplied: false
+      - label: Spot taker fee (trial period)
+        name: spot_taker_vip3_trial
+        type: flat
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00%'
+        userMultiplied: false
+    elements:
+      - name: Spot Trading API (0% fees for 30 days)
+      - name: Higher API rate limit ceilings
+      - name: Access to full API feature set
+  - id: bitmart-spot-standard
+    name: Spot Trading - Standard (VIP Level 1)
+    type: usage-based
+    description: Default maker/taker commission for accounts below BMX holdings thresholds. Trading
+      pairs are organized into classes (A through D) with different base fee rates. BMX token holders
+      receive a 25% discount when paying fees in BMX (not applicable during API VIP enrollment).
+    entries:
+      - label: Class-A maker/taker fee
+        name: spot_class_a
+        type: metered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.1000%'
+        userMultiplied: false
+      - label: Class-B maker/taker fee
+        name: spot_class_b
+        type: metered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.2500%'
+        userMultiplied: false
+      - label: Class-C maker/taker fee
+        name: spot_class_c
+        type: metered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.4000%'
+        userMultiplied: false
+      - label: Class-D maker/taker fee
+        name: spot_class_d
+        type: metered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.6000%'
+        userMultiplied: false
+      - label: BMX fee discount
+        name: bmx_discount
+        type: tiered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '-25% when paid in BMX'
+        userMultiplied: false
+    elements:
+      - name: Spot Trading
+      - name: Margin Trading
+      - name: Algo Orders
+  - id: bitmart-spot-vip
+    name: Spot Trading - VIP Tiers (Levels 1-12)
+    type: tiered
+    description: Volume-discounted maker/taker fees for accounts that meet BMX token holding thresholds.
+      BitMart offers 12 VIP levels based primarily on BMX balance, with maker fees as low as 0.04%
+      and taker fees as low as 0.045% at the highest tier. A 25% BMX payment discount further reduces
+      fees but is not combinable with API VIP program enrollment.
+    entries:
+      - label: VIP Level 1 maker/taker (<20,000 BMX)
+        name: spot_vip1
+        type: tiered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.1000% / 0.1000%'
+        userMultiplied: false
+      - label: VIP Level 7 maker/taker (>400,000 BMX)
+        name: spot_vip7
+        type: tiered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.0650% / 0.0700%'
+        userMultiplied: false
+      - label: VIP Level 12 maker/taker (>900,000 BMX)
+        name: spot_vip12
+        type: tiered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.0400% / 0.0450%'
+        userMultiplied: false
+    elements:
+      - name: Reduced spot maker/taker fees
+      - name: Higher API rate limit ceilings at higher VIP tiers
+      - name: BMX discount available (not combinable with API VIP program)
+  - id: bitmart-institutional
+    name: Institutional / Market Maker
+    type: enterprise
+    description: Negotiated fee schedules and API access terms for institutional clients, market makers,
+      and high-volume trading firms. Contact BitMart's dedicated API account management team for details.
+    entries:
+      - label: Institutional trading fees
+        name: institutional_fees
+        type: tiered
+        metric: transaction
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: Dedicated account manager
+      - name: Lifetime VIP membership perks
+      - name: Negotiated maker/taker rates
+      - name: Priority API support via Telegram API Club
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,215 @@
+aid: bitmart
+url: https://raw.githubusercontent.com/api-evangelist/bitmart/refs/heads/main/apis.yml
+modified: '2026-06-13'
+apis:
+  - aid: bitmart:spot-trading-api
+    name: BitMart Spot Trading API
+    tags:
+      - Cryptocurrency
+      - Exchange
+      - Market Data
+      - Spot
+      - Trading
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api-cloud.bitmart.com
+    humanURL: https://developer-pro.bitmart.com/en/spot/
+    properties:
+      - url: https://developer-pro.bitmart.com/en/spot/
+        type: Documentation
+    description: >-
+      The BitMart Spot Trading REST API provides programmatic access to spot trading on the BitMart
+      global cryptocurrency exchange. Developers can place and manage limit, market, and algorithmic
+      orders, query real-time and historical market data including tickers, order books, klines and
+      trades, manage account balances, and access trading fee information. Authentication uses
+      HMAC-SHA256 signed requests with API key, secret, and memo credentials. Public endpoints are
+      accessible without authentication while trading and account endpoints require KEYED or SIGNED
+      access.
+  - aid: bitmart:spot-websocket-api
+    name: BitMart Spot WebSocket API
+    tags:
+      - Cryptocurrency
+      - Market Data
+      - Real-Time
+      - Streaming
+      - WebSocket
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: wss://ws-manager-compress.bitmart.com
+    humanURL: https://developer-pro.bitmart.com/en/spot/
+    properties:
+      - url: https://developer-pro.bitmart.com/en/spot/
+        type: Documentation
+    description: >-
+      The BitMart Spot WebSocket API delivers real-time streaming market data and private account
+      updates via persistent WebSocket connections. Public channels include ticker prices, order book
+      depth, trade history, and kline candlestick data. Private channels provide real-time order
+      status updates and account asset changes. The public endpoint is at
+      wss://ws-manager-compress.bitmart.com/api and the private endpoint at
+      wss://ws-manager-compress.bitmart.com/user. Each IP can maintain up to 20 public and 10 private
+      connections simultaneously.
+  - aid: bitmart:futures-trading-api
+    name: BitMart Futures Trading API
+    tags:
+      - Cryptocurrency
+      - Derivatives
+      - Futures
+      - Perpetual
+      - Trading
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api-cloud-v2.bitmart.com
+    humanURL: https://developer-pro.bitmart.com/en/futuresv2/
+    properties:
+      - url: https://developer-pro.bitmart.com/en/futuresv2/
+        type: Documentation
+    description: >-
+      The BitMart Futures Trading REST API enables trading of perpetual futures contracts on the
+      BitMart derivatives platform. Developers can submit and cancel orders including plan orders,
+      take-profit and stop-loss orders, and trailing stop orders. The API provides endpoints for
+      querying contract details, market depth, open interest, funding rates, klines, and leveraged
+      position data. A simulated trading environment is available at demo-api-cloud-v2.bitmart.com
+      for strategy testing without risking capital.
+  - aid: bitmart:futures-websocket-api
+    name: BitMart Futures WebSocket API
+    tags:
+      - Cryptocurrency
+      - Derivatives
+      - Futures
+      - Real-Time
+      - Streaming
+      - WebSocket
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: wss://openapi-ws-v2.bitmart.com
+    humanURL: https://developer-pro.bitmart.com/en/futuresv2/
+    properties:
+      - url: https://developer-pro.bitmart.com/en/futuresv2/
+        type: Documentation
+    description: >-
+      The BitMart Futures WebSocket API streams real-time derivatives market data and account updates
+      through persistent WebSocket connections. Public channels include depth snapshots and incremental
+      updates, trades, klines, mark price, and funding rate data. Private channels provide real-time
+      position, asset, and order event streams. The public endpoint is wss://openapi-ws-v2.bitmart.com/api
+      and the private endpoint is wss://openapi-ws-v2.bitmart.com/user. Up to 500 private connections
+      per IP are supported for high-throughput institutional deployments.
+  - aid: bitmart:margin-trading-api
+    name: BitMart Margin Trading API
+    tags:
+      - Borrowing
+      - Cryptocurrency
+      - Leverage
+      - Margin
+      - Trading
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api-cloud.bitmart.com
+    humanURL: https://developer-pro.bitmart.com/en/spot/
+    properties:
+      - url: https://developer-pro.bitmart.com/en/spot/
+        type: Documentation
+    description: >-
+      The BitMart Margin Trading API provides access to isolated margin trading functionality. Developers
+      can submit leveraged buy and sell orders, manage isolated margin accounts, transfer assets between
+      spot and margin wallets, borrow and repay loan assets, and query borrow and repayment records. The
+      API exposes available margin trading pairs and their parameters, enabling algorithmic margin
+      strategies with real-time position management across supported cryptocurrency pairs.
+  - aid: bitmart:account-wallet-api
+    name: BitMart Account and Wallet API
+    tags:
+      - Account
+      - Cryptocurrency
+      - Deposits
+      - Wallet
+      - Withdrawals
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api-cloud.bitmart.com
+    humanURL: https://developer-pro.bitmart.com/en/spot/
+    properties:
+      - url: https://developer-pro.bitmart.com/en/spot/
+        type: Documentation
+    description: >-
+      The BitMart Account and Wallet API provides programmatic access to funding account management,
+      including wallet balance queries, deposit address retrieval, withdrawal application submission,
+      and deposit/withdrawal history. Developers can look up available currencies, query withdrawal
+      fee estimates, manage pre-verified withdrawal address lists, and retrieve detailed deposit and
+      withdrawal transaction records for reconciliation. All sensitive wallet operations require
+      SIGNED authentication with a valid API key.
+common:
+  - type: Portal
+    url: https://developer-pro.bitmart.com/
+  - type: Documentation
+    url: https://developer-pro.bitmart.com/en/spot/
+  - type: GettingStarted
+    url: https://developer-pro.bitmart.com/en/quick/
+  - type: SDKs
+    url: https://developer-pro.bitmart.com/en/quick/
+  - type: GitHubOrganization
+    url: https://github.com/bitmartexchange
+  - type: StatusPage
+    url: https://developer-pro.bitmart.com/
+  - type: TermsOfService
+    url: https://www.bitmart.com/about/en-US/terms-of-use
+  - type: PrivacyPolicy
+    url: https://www.bitmart.com/about/en-US/privacy-policy
+  - type: Features
+    data:
+      - name: Spot Trading
+        description: Buy and sell 1000+ cryptocurrency pairs with limit, market, and algo orders.
+      - name: Futures Trading
+        description: Trade perpetual futures contracts with leverage on the BitMart derivatives platform.
+      - name: Margin Trading
+        description: Trade on isolated margin with leveraged positions using borrowed assets.
+      - name: Algo Orders
+        description: Place algorithmic orders including TWAP-style and conditional plan orders.
+      - name: WebSocket Streams
+        description: Real-time market data and account event streams for spot and futures markets.
+      - name: Wallet Management
+        description: Manage deposits, withdrawals, and asset transfers between accounts.
+      - name: Sub-Account Management
+        description: Create and manage sub-accounts with inter-account asset transfer support.
+      - name: API VIP Program
+        description: New API users receive 30-day VIP3 trial with reduced maker/taker fees.
+  - type: UseCases
+    data:
+      - name: Algorithmic Trading
+        description: Build automated trading bots using BitMart REST and WebSocket APIs.
+      - name: Portfolio Management
+        description: Track and rebalance cryptocurrency portfolios programmatically.
+      - name: Market Data Aggregation
+        description: Aggregate real-time price and order book data for analytics or dashboards.
+      - name: Futures Strategy Execution
+        description: Execute leveraged perpetual futures strategies with plan orders and TP/SL.
+      - name: Arbitrage Trading
+        description: Exploit price differences across BitMart spot, margin, and futures markets.
+  - type: Integrations
+    data:
+      - name: Python SDK
+        description: Official BitMart Python SDK installable via pip install bitmart-python-sdk-api.
+      - name: Node.js SDK
+        description: Official BitMart Node.js SDK installable via npm install @bitmartexchange/bitmart-node-sdk-api.
+      - name: Go SDK
+        description: Official BitMart Go SDK available via go get github.com/bitmartexchange/bitmart-go-sdk-api.
+      - name: Java SDK
+        description: Official BitMart Java SDK available via Maven dependency io.github.bitmartexchange:bitmart-java-sdk-api.
+      - name: PHP SDK
+        description: Official BitMart PHP SDK installable via composer require bitmartexchange/bitmart-php-sdk-api.
+      - name: Postman Collection
+        description: Postman collection available for testing and exploring BitMart API endpoints.
+description: >-
+  BitMart is a global cryptocurrency exchange providing REST and WebSocket APIs for spot trading,
+  perpetual futures contracts, margin trading, real-time market data, and account and withdrawal
+  management across 6 specialized API surfaces.
+name: BitMart
+kind: contract
+access: 3rd-Party
+position: Consuming
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Cryptocurrency
+  - Exchange
+  - Trading
+  - Blockchain
+  - Finance
+  - Market Data
+  - Futures
+created: '2026-06-13'
+specificationVersion: '0.19'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
