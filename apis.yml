@@ -10,7 +10,7 @@ apis:
       - Market Data
       - Spot
       - Trading
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api-cloud.bitmart.com
     humanURL: https://developer-pro.bitmart.com/en/spot/
     properties:
@@ -32,7 +32,7 @@ apis:
       - Real-Time
       - Streaming
       - WebSocket
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: wss://ws-manager-compress.bitmart.com
     humanURL: https://developer-pro.bitmart.com/en/spot/
     properties:
@@ -54,7 +54,7 @@ apis:
       - Futures
       - Perpetual
       - Trading
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api-cloud-v2.bitmart.com
     humanURL: https://developer-pro.bitmart.com/en/futuresv2/
     properties:
@@ -76,7 +76,7 @@ apis:
       - Real-Time
       - Streaming
       - WebSocket
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: wss://openapi-ws-v2.bitmart.com
     humanURL: https://developer-pro.bitmart.com/en/futuresv2/
     properties:
@@ -97,7 +97,7 @@ apis:
       - Leverage
       - Margin
       - Trading
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api-cloud.bitmart.com
     humanURL: https://developer-pro.bitmart.com/en/spot/
     properties:
@@ -117,7 +117,7 @@ apis:
       - Deposits
       - Wallet
       - Withdrawals
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api-cloud.bitmart.com
     humanURL: https://developer-pro.bitmart.com/en/spot/
     properties:
@@ -199,7 +199,7 @@ name: BitMart
 kind: contract
 access: 3rd-Party
 position: Consuming
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Cryptocurrency
   - Exchange

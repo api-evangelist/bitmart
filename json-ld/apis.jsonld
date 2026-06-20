@@ -10,7 +10,7 @@
   "name": "BitMart",
   "description": "BitMart is a global cryptocurrency exchange providing REST and WebSocket APIs for spot trading, perpetual futures contracts, margin trading, real-time market data, and account and withdrawal management across 6 specialized API surfaces.",
   "url": "https://developer-pro.bitmart.com/",
-  "image": "https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "image": "https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg",
   "keywords": [
     "Cryptocurrency",
     "Exchange",
