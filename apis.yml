@@ -131,6 +131,8 @@ apis:
       withdrawal transaction records for reconciliation. All sensitive wallet operations require
       SIGNED authentication with a valid API key.
 common:
+  - type: DomainSecurity
+    url: security/bitmart-domain-security.yml
   - type: Portal
     url: https://developer-pro.bitmart.com/
   - type: Documentation
