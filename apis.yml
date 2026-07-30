@@ -1,5 +1,17 @@
 aid: bitmart
 url: https://raw.githubusercontent.com/api-evangelist/bitmart/refs/heads/main/apis.yml
+accessModel:
+  pricing: paid
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Paid
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 modified: '2026-06-13'
 apis:
   - aid: bitmart:spot-trading-api
@@ -201,7 +213,7 @@ name: BitMart
 kind: contract
 access: 3rd-Party
 position: Consuming
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bitmart.png
 tags:
   - Cryptocurrency
   - Exchange
