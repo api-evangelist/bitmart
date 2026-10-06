@@ -23,7 +23,7 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
-modified: '2026-06-13'
+modified: '2026-10-06'
 apis:
   - aid: bitmart:spot-trading-api
     name: BitMart Spot Trading API
@@ -160,6 +160,8 @@ apis:
       withdrawal transaction records for reconciliation. All sensitive wallet operations require
       SIGNED authentication with a valid API key.
 common:
+  - url: https://www.bitmart.com/news
+    type: Blog
   - type: Website
     url: https://bitmart.com/
   - type: DomainSecurity
