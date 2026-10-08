@@ -220,3 +220,54 @@ plans:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - subscription
+  - tiered
+  units:
+  - request
+  - transaction
+  plans:
+  - name: API Access (No Fee)
+    access: freemium
+    model: subscription
+    model_how: derived
+    units:
+    - request
+    periods:
+    - per-use
+  - name: API VIP3 Trial (30 Days)
+    access: freemium
+    model: subscription
+    model_how: derived
+    units:
+    - transaction
+    periods:
+    - per-use
+  - name: Spot Trading - Standard (VIP Level 1)
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - transaction
+    periods:
+    - per-use
+  - name: Spot Trading - VIP Tiers (Levels 1-12)
+    access: other
+    model: tiered
+    model_how: stated
+    units:
+    - transaction
+    periods:
+    - per-use
+  - name: Institutional / Market Maker
+    access: enterprise
+    model: metered
+    model_how: derived
+    units:
+    - transaction
+    periods:
+    - per-use
