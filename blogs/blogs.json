@@ -1,5 +1,16 @@
 {
   "url": "https://www.bitmart.com/blog/en-US",
-  "fetched": "2026-06-13",
-  "posts": []
+  "fetched": "2026-10-10T13:15:00Z",
+  "posts": [],
+  "repo": "bitmart",
+  "feeds": [
+    {
+      "source": "https://www.bitmart.com/news",
+      "feed_url": "https://www.bitmart.com/news",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0
 }
