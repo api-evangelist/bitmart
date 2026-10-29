@@ -64,63 +64,119 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BitMart is a global cryptocurrency exchange providing REST and WebSocket APIs for spot trading, perpetual futures contracts, margin trading, real-time market data, and account and withdrawal management.
+BitMart is a global cryptocurrency exchange providing REST and WebSocket APIs for spot trading, perpetual futures contracts, margin trading, real-time market data, and account and withdrawal management across 6 specialized API surfaces.
 
-**Developer Portal:** https://developer-pro.bitmart.com/
+**Areas:** Cryptocurrency · Exchange · Trading · Blockchain · Finance · Market Data · Futures
 
-## APIs
+## BitMart on APIs.io
 
-| API | Base URL | Description |
-|-----|----------|-------------|
-| Spot Trading | https://api-cloud.bitmart.com | Spot market orders, market data, algo orders, fees |
-| Spot WebSocket | wss://ws-manager-compress.bitmart.com | Real-time spot market data and account events |
-| Futures Trading | https://api-cloud-v2.bitmart.com | Perpetual futures orders, positions, funding rates |
-| Futures WebSocket | wss://openapi-ws-v2.bitmart.com | Real-time futures market data and account events |
-| Margin Trading | https://api-cloud.bitmart.com | Isolated margin orders, borrowing, and repayment |
-| Account and Wallet | https://api-cloud.bitmart.com | Deposits, withdrawals, balances, transaction history |
+Everything profiled for BitMart is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bitmart/](https://apis.io/providers/bitmart/)** — or go straight to one of the APIs or properties below.
 
-## Authentication
+### APIs (6)
 
-BitMart uses HMAC-SHA256 request signing. All requests require:
-- `X-BM-KEY` — API access key
-- `X-BM-TIMESTAMP` — Current timestamp in milliseconds
-- `X-BM-SIGN` — HMAC-SHA256 signature of `timestamp#memo#body`
+- [BitMart Spot Trading API](https://apis.io/apis/bitmart/spot-trading-api/) — The BitMart Spot Trading REST API provides programmatic access to spot trading on the BitMart global cryptocurrency exchange. Developers can place and…
+- [BitMart Spot WebSocket API](https://apis.io/apis/bitmart/spot-websocket-api/) — The BitMart Spot WebSocket API delivers real-time streaming market data and private account updates via persistent WebSocket connections. Public channels…
+- [BitMart Futures Trading API](https://apis.io/apis/bitmart/futures-trading-api/) — The BitMart Futures Trading REST API enables trading of perpetual futures contracts on the BitMart derivatives platform. Developers can submit and cancel…
+- [BitMart Futures WebSocket API](https://apis.io/apis/bitmart/futures-websocket-api/) — The BitMart Futures WebSocket API streams real-time derivatives market data and account updates through persistent WebSocket connections. Public channels…
+- [BitMart Margin Trading API](https://apis.io/apis/bitmart/margin-trading-api/) — The BitMart Margin Trading API provides access to isolated margin trading functionality. Developers can submit leveraged buy and sell orders, manage…
+- [BitMart Account and Wallet API](https://apis.io/apis/bitmart/account-wallet-api/) — The BitMart Account and Wallet API provides programmatic access to funding account management, including wallet balance queries, deposit address retrieval,…
 
-Public endpoints require no authentication. KEYED endpoints require only the API key header. SIGNED endpoints require all three headers.
+### Published properties
 
-## SDKs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Language | Install |
-|----------|---------|
-| Python | `pip install bitmart-python-sdk-api` |
-| Node.js | `npm install @bitmartexchange/bitmart-node-sdk-api` |
-| Go | `go get github.com/bitmartexchange/bitmart-go-sdk-api` |
-| Java | Maven: `io.github.bitmartexchange:bitmart-java-sdk-api` |
-| PHP | `composer require bitmartexchange/bitmart-php-sdk-api` |
+#### JSON-LD (1)
 
-## Rate Limits
+Linked-data contexts for the provider's vocabulary.
 
-Rate limits vary per endpoint and scope:
-- **IP scope:** Public and keyed endpoints, typically 8–15 requests per 2-second window
-- **KEY scope:** Authenticated query endpoints, up to 50 requests per 2-second window
-- **UID scope:** Signed trading endpoints, up to 40 requests per 2-second window
-- **General baseline:** 600 requests per 60 seconds where no specific limit is documented
+- [Apis Context](https://apis.io/jsonld/bitmart/apis/)
 
-Rate limit usage is exposed in response headers: `X-BM-RateLimit-Remaining`, `X-BM-RateLimit-Limit`, `X-BM-RateLimit-Reset`. HTTP 429 is returned when limits are exceeded.
+#### Security (1)
 
-## Pricing
+Authentication, trust centre, and vulnerability disclosure.
 
-API connectivity is free. Trading fees are charged per transaction:
-- **New API users:** 30-day VIP3 trial with 0% spot trading fees
-- **Standard (Class-A pairs):** 0.10% maker and taker
-- **VIP tiers:** 12 levels based on BMX token holdings; fees as low as 0.04% maker / 0.045% taker at VIP12
-- **BMX discount:** 25% fee reduction when paying fees in BMX (not combinable with API VIP program)
+- [Bitmart Domain Security](https://apis.io/security/bitmart/bitmart-domain-security/)
 
-## Resources
+#### Plans and pricing (1)
 
-- [API Reference (Spot)](https://developer-pro.bitmart.com/en/spot/)
-- [API Reference (Futures)](https://developer-pro.bitmart.com/en/futuresv2/)
-- [Quick Start & SDKs](https://developer-pro.bitmart.com/en/quick/)
-- [Signature FAQ](https://developer-pro.bitmart.com/en/faq/)
-- [GitHub Organization](https://github.com/bitmartexchange)
-- [Telegram API Club](https://t.me/bitmart_api)
+Published plans, tiers and prices.
+
+- [Bitmart Plans Pricing](https://apis.io/plans/bitmart/bitmart-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Bitmart Rate Limits](https://apis.io/rate-limits/bitmart/bitmart-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Bitmart Finops](https://apis.io/finops/bitmart/bitmart-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bitmart.com/)
+- [Documentation](https://developer-pro.bitmart.com/en/spot/)
+- [Getting started](https://developer-pro.bitmart.com/en/quick/)
+- [Blog](https://www.bitmart.com/news)
+- [Terms of service](https://www.bitmart.com/about/en-US/terms-of-use)
+- [Privacy policy](https://www.bitmart.com/about/en-US/privacy-policy)
+- [GitHub](https://github.com/bitmartexchange)
+- [Status](https://developer-pro.bitmart.com/)
+
+## API Evangelist rating
+
+**Kin Score 19.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 6.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 7.9 |
+
+**Agent readiness 0.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bitmart/](https://apis.io/providers/bitmart/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for BitMart: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bitmart/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
