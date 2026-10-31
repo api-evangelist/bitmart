@@ -64,11 +64,15 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No live API surface.** Nothing from this company could be reached the last time it was checked: the site is offline, parked or unreachable, or no public API was found. This profile is kept as a historical record and is not maintained or rated.
+
+**Status:** event: BitMart ended spot, futures and other trading on 26 August 2026 at 01:00 UTC. A later restructuring proposal does not confirm that trading has resumed. API descriptions here are historical.
+
 BitMart is a global cryptocurrency exchange providing REST and WebSocket APIs for spot trading, perpetual futures contracts, margin trading, real-time market data, and account and withdrawal management across 6 specialized API surfaces.
 
 **Areas:** Cryptocurrency · Exchange · Trading · Blockchain · Finance · Market Data · Futures
 
-## BitMart on APIs.io
+## BitMart on APIs.io (historical record)
 
 Everything profiled for BitMart is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bitmart/](https://apis.io/providers/bitmart/)** — or go straight to one of the APIs or properties below.
 
@@ -130,44 +134,7 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 19.1** — emerging · rubric 0.24.0 · scored 2026-10-17
-
-| Facet | Score |
-|---|---|
-| Discoverability | 71.4 |
-| Contract quality | 6.7 |
-| Contract governance | 0.0 |
-| Operational transparency | 10.5 |
-| Developer ergonomics | 40.5 |
-| Access clarity | 7.9 |
-
-**Agent readiness 0.6** — human-only
-
-| Agent-readiness dimension | Result |
-|---|---|
-| Spec Presence | — |
-| Agentic Access | — |
-| Reversibility Documented | — |
-| MCP Server | — |
-| Auth Clarity | — |
-| Idempotency | — |
-| Error Semantics | — |
-| OpenAPI Examples | — |
-| Rate Limit Signal | derived (partial credit) |
-| Event Surface Described | — |
-| Agent Skills | — |
-| Well Known Catalog | — |
-| Consent Identity | — |
-| Agent Card | — |
-| Dry Run Mode | — |
-| Delegated Identity | — |
-| Protected Resource Metadata | — |
-| Dynamic Client Registration | — |
-| Agentic Commerce | — |
-
-**Regulatory alignment 15.7** — Securities & Market Data
-
-The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bitmart/](https://apis.io/providers/bitmart/).
+**Not rated** — this company is recorded as no live api surface, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
 
 ## How this profile is made
 
